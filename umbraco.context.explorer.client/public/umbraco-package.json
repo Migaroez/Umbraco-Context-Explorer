@@ -1,0 +1,15 @@
+{
+    "$schema": "../../Umbraco.Context.Explorer.Website/umbraco-package-schema.json",
+    "id": "umbraco.context.explorer",
+    "name": "Umbraco.Context.Explorer",
+    "allowPackageTelemetry": true,
+    "version": "1.0.0",
+    "extensions": [
+        {
+          "name": "Umbraco.Context.Explorer EntryPoint",
+          "alias": "umbraco.context.explorer.entrypoint",
+          "type": "backofficeEntryPoint",
+          "js": "/App_Plugins/Umbraco.Context.Explorer/umbraco.context.explorer.js"
+        }
+      ]
+}

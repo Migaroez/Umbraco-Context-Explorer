@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <StaticWebAssetBasePath>App_Plugins/Umbraco.Context.Explorer</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Umbraco.Context.Explorer</PackageId>
+    <Product>Umbraco.Context.Explorer</Product>
+    <Title>Umbraco.Context.Explorer</Title>
+    <Description>...</Description>
+    <PackageTags>umbraco plugin package</PackageTags>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" Version="14.2.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="14.2.0" />
+  </ItemGroup>
+</Project>
