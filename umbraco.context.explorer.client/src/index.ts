@@ -7,13 +7,13 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: 'globalContext',
             alias: 'Our.ExtensionExplorer.Context',
             name: 'Context Explorer Context',
-            api: () => import('./context'),
+            api: () => import('./Core/context'),
         },
         {
             type: 'headerApp',
             alias: 'Our.ExtensionExplorer.Toggle',
             name: 'Context Explorer',
-            element: () => import('./toggle'),
+            element: () => import('./Core/Elements/toggle'),
             weight: 0,
             meta: {
                 pathname: 'context-explorer-toggle',
@@ -23,7 +23,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: 'headerApp',
             alias: 'Our.ExtensionExplorer.HeaderApp',
             name: 'Context Explorer',
-            element: () => import('./explorer'),
+            element: () => import('./Core/Elements/explorer'),
             weight: 1,
             meta: {
                 pathname: 'context-explorer-headerApp',
@@ -42,7 +42,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: "dashboard",
             alias: "Our.ExtensionExplorer.dashboard",
             name: "Context Explorer Dashboard",
-            element: () => import('./dashboard'),
+            element: () => import('./Registrations/Elements/dashboard'),
             weight: -1,
             meta: {
                 label: "Context Explorer Dashboard",
@@ -59,7 +59,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: "sectionView",
             alias: "Our.ExtensionExplorer.SectionView",
             name: "Context Explorer View",
-            element: () => import('./sectionView'),
+            element: () => import('./Registrations/Elements/sectionView'),
             meta: {
                 sections: ["Our.ExtensionExplorer.Section"],
                 label: "Section View",
@@ -70,7 +70,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: "sectionSidebarApp",
             alias: "Our.ExtensionExplorer.SectionSidebarApp",
             name: "Context Explorer Sidebar App",
-            element: () => import('./sidebarApp'),
+            element: () => import('./Registrations/Elements/sidebarApp'),
             meta: {
                 
             },
@@ -86,7 +86,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             kind: "menu",
             alias: "Our.ExtensionExplorer.SectionSidebarApp.MenuApp",
             name: "Context Explorer Sidebar Menu App",
-            element: () => import('./menuSidebarApp'),
+            element: () => import('./Registrations/Elements/menuSidebarApp'),
             meta: {
                 label: "Sidebar menu app",
                 menu: "Our.ExtensionExplorer.Menu"
@@ -102,7 +102,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: "menu",
             alias: "Our.ExtensionExplorer.Menu",
             name: "Context Explorer Menu",
-            element: () => import('./menu'),
+            element: () => import('./Registrations/Elements/menu'),
             meta: {
                 label: "Sidebar menu"
             }
@@ -113,7 +113,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             alias: 'Our.ExtensionExplorer.EntityAction',
             name: 'Debug Action',
             weight: 10,
-            api: () => import('./EntityAction'),
+            api: () => import('./Registrations/Actions/EntityAction'),
             forEntityTypes: [UMB_DOCUMENT_ROOT_ENTITY_TYPE, UMB_DOCUMENT_ENTITY_TYPE],
             meta: {
                 icon: 'icon-bug',
@@ -129,13 +129,13 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             type: 'condition',
             name: 'Context explorer condition',
             alias: 'Our.ExtensionExplorer.DebugCondition',
-            api: () => import('./DebugCondition')
+            api: () => import('./Core/Conditions/DebugCondition')
         },
         {
             type: 'userProfileApp',
             alias: 'Our.ExtensionExplorer.EntityAction.UserProfileApp',
             name: 'User Profile App',
-            element: () => import('./userProfileApp'),
+            element: () => import('./Registrations/Elements/userProfileApp'),
             weight: 100,
             meta: {
                 label: 'Context explorer',

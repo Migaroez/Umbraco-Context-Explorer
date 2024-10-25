@@ -5,13 +5,13 @@ const r = (n, e) => {
       type: "globalContext",
       alias: "Our.ExtensionExplorer.Context",
       name: "Context Explorer Context",
-      api: () => import("./context-CzoDVYt5.js")
+      api: () => import("./context-CGWozyDb.js")
     },
     {
       type: "headerApp",
       alias: "Our.ExtensionExplorer.Toggle",
       name: "Context Explorer",
-      element: () => import("./toggle-C6D3bXIU.js"),
+      element: () => import("./toggle-DEvqw7aM.js"),
       weight: 0,
       meta: {
         pathname: "context-explorer-toggle"
@@ -21,7 +21,7 @@ const r = (n, e) => {
       type: "headerApp",
       alias: "Our.ExtensionExplorer.HeaderApp",
       name: "Context Explorer",
-      element: () => import("./explorer-BEWy0vo6.js"),
+      element: () => import("./explorer-CDwkKfuH.js"),
       weight: 1,
       meta: {
         pathname: "context-explorer-headerApp"
@@ -40,7 +40,7 @@ const r = (n, e) => {
       type: "dashboard",
       alias: "Our.ExtensionExplorer.dashboard",
       name: "Context Explorer Dashboard",
-      element: () => import("./dashboard-CkPY0ELr.js"),
+      element: () => import("./dashboard-DTd0vK0f.js"),
       weight: -1,
       meta: {
         label: "Context Explorer Dashboard",
@@ -57,7 +57,7 @@ const r = (n, e) => {
       type: "sectionView",
       alias: "Our.ExtensionExplorer.SectionView",
       name: "Context Explorer View",
-      element: () => import("./sectionView-WBdF7vuK.js"),
+      element: () => import("./sectionView-TB4PtYvw.js"),
       meta: {
         sections: ["Our.ExtensionExplorer.Section"],
         label: "Section View",
@@ -68,7 +68,7 @@ const r = (n, e) => {
       type: "sectionSidebarApp",
       alias: "Our.ExtensionExplorer.SectionSidebarApp",
       name: "Context Explorer Sidebar App",
-      element: () => import("./sidebarApp-BrpIoPrT.js"),
+      element: () => import("./sidebarApp-BH6QDSRa.js"),
       meta: {},
       conditions: [
         {
@@ -82,7 +82,7 @@ const r = (n, e) => {
       kind: "menu",
       alias: "Our.ExtensionExplorer.SectionSidebarApp.MenuApp",
       name: "Context Explorer Sidebar Menu App",
-      element: () => import("./menuSidebarApp-omP9xFsV.js"),
+      element: () => import("./menuSidebarApp-BjjHrrgr.js"),
       meta: {
         label: "Sidebar menu app",
         menu: "Our.ExtensionExplorer.Menu"
@@ -98,7 +98,7 @@ const r = (n, e) => {
       type: "menu",
       alias: "Our.ExtensionExplorer.Menu",
       name: "Context Explorer Menu",
-      element: () => import("./menu-Bar5o21y.js"),
+      element: () => import("./menu-CwA_fTIv.js"),
       meta: {
         label: "Sidebar menu"
       }
@@ -109,7 +109,7 @@ const r = (n, e) => {
       alias: "Our.ExtensionExplorer.EntityAction",
       name: "Debug Action",
       weight: 10,
-      api: () => import("./EntityAction-VqO6Gcjw.js"),
+      api: () => import("./EntityAction-Jaq34hm7.js"),
       forEntityTypes: [t, o],
       meta: {
         icon: "icon-bug",
@@ -125,13 +125,13 @@ const r = (n, e) => {
       type: "condition",
       name: "Context explorer condition",
       alias: "Our.ExtensionExplorer.DebugCondition",
-      api: () => import("./DebugCondition-tksilTbs.js")
+      api: () => import("./DebugCondition-BWoOKohe.js")
     },
     {
       type: "userProfileApp",
       alias: "Our.ExtensionExplorer.EntityAction.UserProfileApp",
       name: "User Profile App",
-      element: () => import("./userProfileApp-Cto1eR29.js"),
+      element: () => import("./userProfileApp-CwPYABOT.js"),
       weight: 100,
       meta: {
         label: "Context explorer",
