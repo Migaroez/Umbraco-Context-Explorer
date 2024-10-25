@@ -3,9 +3,9 @@ import {UmbControllerHostElement} from '@umbraco-cms/backoffice/controller-api';
 import {UMB_CONTEXT_EXPLORER_CONTEXT} from './context';
 import {UmbContextConsumerController} from "@umbraco-cms/backoffice/context-api";
 
-export class ContentDebugAction extends UmbEntityActionBase<never> {
+export class EntityAction extends UmbEntityActionBase<never> {
 
-    #contextExplorerContext?: typeof UMB_CONTEXT_EXPLORER_CONTEXT.TYPE;
+    #ExtensionExplorerContext?: typeof UMB_CONTEXT_EXPLORER_CONTEXT.TYPE;
 
     #host?: UmbControllerHostElement;
 
@@ -14,13 +14,13 @@ export class ContentDebugAction extends UmbEntityActionBase<never> {
         this.#host = host;
 
         new UmbContextConsumerController(host, UMB_CONTEXT_EXPLORER_CONTEXT, (instance) => {
-            this.#contextExplorerContext = instance;
+            this.#ExtensionExplorerContext = instance;
         });
     }
 
     async execute() {
-        this.#contextExplorerContext?.displayHostContexts(this.#host)
+        this.#ExtensionExplorerContext?.displayHostContexts(this.#host)
     }
 }
 
-export default ContentDebugAction;
+export default EntityAction;

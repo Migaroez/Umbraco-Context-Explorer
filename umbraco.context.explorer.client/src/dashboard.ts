@@ -2,7 +2,7 @@ import {customElement, html} from '@umbraco-cms/backoffice/external/lit';
 import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('umb-context-explorer-dashboard')
-export class UmbContextExplorerDashboard extends UmbLitElement {
+export class UmbExtensionExplorerDashboard extends UmbLitElement {
 
     override render() {
         return html`
@@ -14,4 +14,4 @@ export class UmbContextExplorerDashboard extends UmbLitElement {
     }
 }
 
-export {UmbContextExplorerDashboard as element};
+export {UmbExtensionExplorerDashboard as element};

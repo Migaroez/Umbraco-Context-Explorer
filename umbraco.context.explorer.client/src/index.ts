@@ -5,13 +5,13 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
     _extensionRegistry.registerMany([
         {
             type: 'globalContext',
-            alias: 'Our.ContextExplorer.Context',
+            alias: 'Our.ExtensionExplorer.Context',
             name: 'Context Explorer Context',
             api: () => import('./context'),
         },
         {
             type: 'headerApp',
-            alias: 'Our.ContextExplorer.Toggle',
+            alias: 'Our.ExtensionExplorer.Toggle',
             name: 'Context Explorer',
             element: () => import('./toggle'),
             weight: 0,
@@ -21,7 +21,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
         },
         {
             type: 'headerApp',
-            alias: 'Our.ContextExplorer.HeaderApp',
+            alias: 'Our.ExtensionExplorer.HeaderApp',
             name: 'Context Explorer',
             element: () => import('./explorer'),
             weight: 1,
@@ -31,7 +31,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
         },
         {
             type: "section",
-            alias: "Our.ContextExplorer.Section",
+            alias: "Our.ExtensionExplorer.Section",
             name: "Context Explorer",
             meta: {
                 "label": "Context",
@@ -40,7 +40,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
         },
         {
             type: "dashboard",
-            alias: "Our.ContextExplorer.dashboard",
+            alias: "Our.ExtensionExplorer.dashboard",
             name: "Context Explorer Dashboard",
             element: () => import('./dashboard'),
             weight: -1,
@@ -51,24 +51,24 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             conditions: [
                 {
                     alias: "Umb.Condition.SectionAlias",
-                    match: "Our.ContextExplorer.Section"
+                    match: "Our.ExtensionExplorer.Section"
                 }
             ]
         },
         {
             type: "sectionView",
-            alias: "Our.ContextExplorer.SectionView",
+            alias: "Our.ExtensionExplorer.SectionView",
             name: "Context Explorer View",
             element: () => import('./sectionView'),
             meta: {
-                sections: ["Our.ContextExplorer.Section"],
+                sections: ["Our.ExtensionExplorer.Section"],
                 label: "Section View",
                 pathname: "context-explorer-section-view"
             }
         },
         {
             type: "sectionSidebarApp",
-            alias: "Our.ContextExplorer.SectionSidebarApp",
+            alias: "Our.ExtensionExplorer.SectionSidebarApp",
             name: "Context Explorer Sidebar App",
             element: () => import('./sidebarApp'),
             meta: {
@@ -77,30 +77,30 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             conditions: [
                 {
                     alias: 'Umb.Condition.SectionAlias',
-                    match: "Our.ContextExplorer.Section",
+                    match: "Our.ExtensionExplorer.Section",
                 },
             ],
         },
         {
             type: "sectionSidebarApp",
             kind: "menu",
-            alias: "Our.ContextExplorer.SectionSidebarApp.MenuApp",
+            alias: "Our.ExtensionExplorer.SectionSidebarApp.MenuApp",
             name: "Context Explorer Sidebar Menu App",
             element: () => import('./menuSidebarApp'),
             meta: {
                 label: "Sidebar menu app",
-                menu: "Our.ContextExplorer.Menu"
+                menu: "Our.ExtensionExplorer.Menu"
             },
             conditions: [
                 {
                     alias: 'Umb.Condition.SectionAlias',
-                    match: "Our.ContextExplorer.Section",
+                    match: "Our.ExtensionExplorer.Section",
                 },
             ],
         },
         {
             type: "menu",
-            alias: "Our.ContextExplorer.Menu",
+            alias: "Our.ExtensionExplorer.Menu",
             name: "Context Explorer Menu",
             element: () => import('./menu'),
             meta: {
@@ -110,30 +110,30 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
         {
             type: 'entityAction',
             kind: 'default',
-            alias: 'Our.ContextExplorer.ContentDebugAction',
+            alias: 'Our.ExtensionExplorer.EntityAction',
             name: 'Debug Action',
             weight: 10,
-            api: () => import('./ContentDebugAction'),
+            api: () => import('./EntityAction'),
             forEntityTypes: [UMB_DOCUMENT_ROOT_ENTITY_TYPE, UMB_DOCUMENT_ENTITY_TYPE],
             meta: {
                 icon: 'icon-bug',
-                label: 'Show Contexts',
+                label: 'Show Extension Explorer',
             },
             conditions: [
                 {
-                    alias: 'Our.ContextExplorer.DebugCondition',
+                    alias: 'Our.ExtensionExplorer.DebugCondition',
                 },
             ],
         },
         {
             type: 'condition',
             name: 'Context explorer condition',
-            alias: 'Our.ContextExplorer.DebugCondition',
+            alias: 'Our.ExtensionExplorer.DebugCondition',
             api: () => import('./DebugCondition')
         },
         {
             type: 'userProfileApp',
-            alias: 'Our.ContextExplorer.ContentDebugAction.UserProfileApp',
+            alias: 'Our.ExtensionExplorer.EntityAction.UserProfileApp',
             name: 'User Profile App',
             element: () => import('./userProfileApp'),
             weight: 100,
@@ -143,7 +143,7 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             },
             conditions: [
                 {
-                    alias: 'Our.ContextExplorer.DebugCondition',
+                    alias: 'Our.ExtensionExplorer.DebugCondition',
                 },
             ],
         },

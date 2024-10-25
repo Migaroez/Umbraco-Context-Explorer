@@ -3,19 +3,19 @@ import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
 import {UMB_CONTEXT_EXPLORER_CONTEXT} from './context';
 
 @customElement('umb-context-explorer-toggle')
-export class UmbContextExplorerToggle extends UmbLitElement {
+export class UmbExtensionExplorerToggle extends UmbLitElement {
 
-    #contextExplorerContext?: typeof UMB_CONTEXT_EXPLORER_CONTEXT.TYPE;
+    #ExtensionExplorerContext?: typeof UMB_CONTEXT_EXPLORER_CONTEXT.TYPE;
 
     constructor() {
         super();
         this.consumeContext(UMB_CONTEXT_EXPLORER_CONTEXT, (instance) => {
-            this.#contextExplorerContext = instance;
+            this.#ExtensionExplorerContext = instance;
         });
     }
 
     #toggle() {
-        this.#contextExplorerContext?.toggle();
+        this.#ExtensionExplorerContext?.toggle();
     }
 
     override render() {
@@ -25,4 +25,4 @@ export class UmbContextExplorerToggle extends UmbLitElement {
     }
 }
 
-export {UmbContextExplorerToggle as element};
+export {UmbExtensionExplorerToggle as element};

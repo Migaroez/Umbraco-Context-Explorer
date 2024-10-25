@@ -8,16 +8,16 @@ import {filter} from "@umbraco-cms/backoffice/external/rxjs";
 import {UmbObjectState} from "@umbraco-cms/backoffice/observable-api";
 import {UmbControllerHostElement} from "@umbraco-cms/backoffice/dist-cms/libs/controller-api";
 import {
-    UMB_MODAL_MANAGER_CONTEXT,
     UMB_CONTEXT_DEBUGGER_MODAL,
+    UMB_MODAL_MANAGER_CONTEXT,
     UmbModalManagerContext
 } from "@umbraco-cms/backoffice/modal";
 import {html, map} from "@umbraco-cms/backoffice/external/lit";
 
-export const UMB_CONTEXT_EXPLORER_CONTEXT = new UmbContextToken<UmbContextExplorerContext>('UmbContextExplorerContext');
+export const UMB_CONTEXT_EXPLORER_CONTEXT = new UmbContextToken<UmbExtensionExplorerContext>('UmbExtensionExplorerContext');
 
-export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorerContext> {
-    #state = new UmbObjectState<UmbContextExplorerStateModel | undefined>(undefined)
+export class UmbExtensionExplorerContext extends UmbContextBase<UmbExtensionExplorerContext> {
+    #state = new UmbObjectState<UmbExtensionExplorerStateModel | undefined>(undefined)
     readonly state = this.#state.asObservable().pipe(filter((state) => !!state));
     readonly hide = this.#state.asObservablePart((state) => state?.hide);
 
@@ -66,14 +66,14 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
                     return html`
                         <details>
                             <summary><strong>${context.alias}</strong></summary>
-                            ${this.#renderInstance(context.data)}
+                            ${this.#renderContextData(context.data)}
                         </details>
                     `;
                 })}
             </div>`;
     }
 
-    #renderInstance(instance: UmbDebugContextItemData) {
+    #renderContextData(instance: UmbDebugContextItemData) {
         switch (instance.type) {
             case 'function': {
                 return html`<h3>Callable Function</h3>`;
@@ -122,8 +122,8 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
     }
 }
 
-export interface UmbContextExplorerStateModel {
+export interface UmbExtensionExplorerStateModel {
     hide: boolean
 }
 
-export default UmbContextExplorerContext;
+export default UmbExtensionExplorerContext;

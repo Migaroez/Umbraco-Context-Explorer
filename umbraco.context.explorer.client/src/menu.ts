@@ -2,7 +2,7 @@ import {customElement, html} from '@umbraco-cms/backoffice/external/lit';
 import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('umb-context-explorer-menu')
-export class UmbContextExplorerMenu extends UmbLitElement {
+export class UmbExtensionExplorerMenu extends UmbLitElement {
 
     override render() {
         return html`
@@ -14,4 +14,4 @@ export class UmbContextExplorerMenu extends UmbLitElement {
     }
 }
 
-export {UmbContextExplorerMenu as element};
+export {UmbExtensionExplorerMenu as element};

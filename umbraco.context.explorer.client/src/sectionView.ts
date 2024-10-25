@@ -2,7 +2,7 @@ import {customElement, html} from '@umbraco-cms/backoffice/external/lit';
 import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('umb-context-explorer-section-view')
-export class UmbContextExplorerSectionView extends UmbLitElement {
+export class UmbExtensionExplorerSectionView extends UmbLitElement {
 
     override render() {
         return html`
@@ -14,4 +14,4 @@ export class UmbContextExplorerSectionView extends UmbLitElement {
     }
 }
 
-export {UmbContextExplorerSectionView as element};
+export {UmbExtensionExplorerSectionView as element};

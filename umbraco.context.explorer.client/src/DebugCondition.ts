@@ -22,7 +22,7 @@ export class ContextDebugCondition
     }
 }
 
-export type SectionAliasConditionConfig = UmbConditionConfigBase<'Our.ContextExplorer.DebugCondition'> & {
+export type SectionAliasConditionConfig = UmbConditionConfigBase<'Our.ExtensionExplorer.DebugCondition'> & {
 };
 
 export default ContextDebugCondition;

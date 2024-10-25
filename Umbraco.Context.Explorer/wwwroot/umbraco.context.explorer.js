@@ -1,17 +1,17 @@
 import { UMB_DOCUMENT_ROOT_ENTITY_TYPE as t, UMB_DOCUMENT_ENTITY_TYPE as o } from "@umbraco-cms/backoffice/document";
-const i = (n, e) => {
+const r = (n, e) => {
   e.registerMany([
     {
       type: "globalContext",
-      alias: "Our.ContextExplorer.Context",
+      alias: "Our.ExtensionExplorer.Context",
       name: "Context Explorer Context",
-      api: () => import("./context-BPGWs9n-.js")
+      api: () => import("./context-CzoDVYt5.js")
     },
     {
       type: "headerApp",
-      alias: "Our.ContextExplorer.Toggle",
+      alias: "Our.ExtensionExplorer.Toggle",
       name: "Context Explorer",
-      element: () => import("./toggle-COMKuPz0.js"),
+      element: () => import("./toggle-C6D3bXIU.js"),
       weight: 0,
       meta: {
         pathname: "context-explorer-toggle"
@@ -19,9 +19,9 @@ const i = (n, e) => {
     },
     {
       type: "headerApp",
-      alias: "Our.ContextExplorer.HeaderApp",
+      alias: "Our.ExtensionExplorer.HeaderApp",
       name: "Context Explorer",
-      element: () => import("./explorer-DwamY_-a.js"),
+      element: () => import("./explorer-BEWy0vo6.js"),
       weight: 1,
       meta: {
         pathname: "context-explorer-headerApp"
@@ -29,7 +29,7 @@ const i = (n, e) => {
     },
     {
       type: "section",
-      alias: "Our.ContextExplorer.Section",
+      alias: "Our.ExtensionExplorer.Section",
       name: "Context Explorer",
       meta: {
         label: "Context",
@@ -38,9 +38,9 @@ const i = (n, e) => {
     },
     {
       type: "dashboard",
-      alias: "Our.ContextExplorer.dashboard",
+      alias: "Our.ExtensionExplorer.dashboard",
       name: "Context Explorer Dashboard",
-      element: () => import("./dashboard-CjZfv7Qz.js"),
+      element: () => import("./dashboard-CkPY0ELr.js"),
       weight: -1,
       meta: {
         label: "Context Explorer Dashboard",
@@ -49,56 +49,56 @@ const i = (n, e) => {
       conditions: [
         {
           alias: "Umb.Condition.SectionAlias",
-          match: "Our.ContextExplorer.Section"
+          match: "Our.ExtensionExplorer.Section"
         }
       ]
     },
     {
       type: "sectionView",
-      alias: "Our.ContextExplorer.SectionView",
+      alias: "Our.ExtensionExplorer.SectionView",
       name: "Context Explorer View",
-      element: () => import("./sectionView-t_xCSepM.js"),
+      element: () => import("./sectionView-WBdF7vuK.js"),
       meta: {
-        sections: ["Our.ContextExplorer.Section"],
+        sections: ["Our.ExtensionExplorer.Section"],
         label: "Section View",
         pathname: "context-explorer-section-view"
       }
     },
     {
       type: "sectionSidebarApp",
-      alias: "Our.ContextExplorer.SectionSidebarApp",
+      alias: "Our.ExtensionExplorer.SectionSidebarApp",
       name: "Context Explorer Sidebar App",
-      element: () => import("./sidebarApp-DUk_lFf8.js"),
+      element: () => import("./sidebarApp-BrpIoPrT.js"),
       meta: {},
       conditions: [
         {
           alias: "Umb.Condition.SectionAlias",
-          match: "Our.ContextExplorer.Section"
+          match: "Our.ExtensionExplorer.Section"
         }
       ]
     },
     {
       type: "sectionSidebarApp",
       kind: "menu",
-      alias: "Our.ContextExplorer.SectionSidebarApp.MenuApp",
+      alias: "Our.ExtensionExplorer.SectionSidebarApp.MenuApp",
       name: "Context Explorer Sidebar Menu App",
-      element: () => import("./menuSidebarApp-ZzjAspcL.js"),
+      element: () => import("./menuSidebarApp-omP9xFsV.js"),
       meta: {
         label: "Sidebar menu app",
-        menu: "Our.ContextExplorer.Menu"
+        menu: "Our.ExtensionExplorer.Menu"
       },
       conditions: [
         {
           alias: "Umb.Condition.SectionAlias",
-          match: "Our.ContextExplorer.Section"
+          match: "Our.ExtensionExplorer.Section"
         }
       ]
     },
     {
       type: "menu",
-      alias: "Our.ContextExplorer.Menu",
+      alias: "Our.ExtensionExplorer.Menu",
       name: "Context Explorer Menu",
-      element: () => import("./menu-1uhUjr0Q.js"),
+      element: () => import("./menu-Bar5o21y.js"),
       meta: {
         label: "Sidebar menu"
       }
@@ -106,32 +106,32 @@ const i = (n, e) => {
     {
       type: "entityAction",
       kind: "default",
-      alias: "Our.ContextExplorer.ContentDebugAction",
+      alias: "Our.ExtensionExplorer.EntityAction",
       name: "Debug Action",
       weight: 10,
-      api: () => import("./ContentDebugAction-BoZCHRPq.js"),
+      api: () => import("./EntityAction-VqO6Gcjw.js"),
       forEntityTypes: [t, o],
       meta: {
         icon: "icon-bug",
-        label: "Show Contexts"
+        label: "Show Extension Explorer"
       },
       conditions: [
         {
-          alias: "Our.ContextExplorer.DebugCondition"
+          alias: "Our.ExtensionExplorer.DebugCondition"
         }
       ]
     },
     {
       type: "condition",
       name: "Context explorer condition",
-      alias: "Our.ContextExplorer.DebugCondition",
-      api: () => import("./DebugCondition-PEsmDDtj.js")
+      alias: "Our.ExtensionExplorer.DebugCondition",
+      api: () => import("./DebugCondition-tksilTbs.js")
     },
     {
       type: "userProfileApp",
-      alias: "Our.ContextExplorer.ContentDebugAction.UserProfileApp",
+      alias: "Our.ExtensionExplorer.EntityAction.UserProfileApp",
       name: "User Profile App",
-      element: () => import("./userProfileApp-Cwep-Dyc.js"),
+      element: () => import("./userProfileApp-Cto1eR29.js"),
       weight: 100,
       meta: {
         label: "Context explorer",
@@ -139,13 +139,13 @@ const i = (n, e) => {
       },
       conditions: [
         {
-          alias: "Our.ContextExplorer.DebugCondition"
+          alias: "Our.ExtensionExplorer.DebugCondition"
         }
       ]
     }
   ]);
 };
 export {
-  i as onInit
+  r as onInit
 };
 //# sourceMappingURL=umbraco.context.explorer.js.map

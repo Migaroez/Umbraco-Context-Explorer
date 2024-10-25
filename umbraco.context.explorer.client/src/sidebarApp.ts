@@ -2,7 +2,7 @@ import {customElement, html} from '@umbraco-cms/backoffice/external/lit';
 import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
 
 @customElement('umb-context-explorer-sidebar-app')
-export class UmbContextExplorerSidebarApp extends UmbLitElement {
+export class UmbExtensionExplorerSidebarApp extends UmbLitElement {
 
     override render() {
         return html`
@@ -14,4 +14,4 @@ export class UmbContextExplorerSidebarApp extends UmbLitElement {
     }
 }
 
-export {UmbContextExplorerSidebarApp as element};
+export {UmbExtensionExplorerSidebarApp as element};
