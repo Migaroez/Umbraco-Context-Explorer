@@ -130,6 +130,22 @@ export const onInit: UmbEntryPointOnInit = (_host, _extensionRegistry) => {
             name: 'Context explorer condition',
             alias: 'Our.ContextExplorer.DebugCondition',
             api: () => import('./DebugCondition')
-        }
+        },
+        {
+            type: 'userProfileApp',
+            alias: 'Our.ContextExplorer.ContentDebugAction.UserProfileApp',
+            name: 'User Profile App',
+            element: () => import('./userProfileApp'),
+            weight: 100,
+            meta: {
+                label: 'Context explorer',
+                pathname: 'context explorer',
+            },
+            conditions: [
+                {
+                    alias: 'Our.ContextExplorer.DebugCondition',
+                },
+            ],
+        },
     ])
 };

@@ -1,6 +1,5 @@
 import type { UmbControllerHost } from '@umbraco-cms/backoffice/controller-api';
 import type {
-    ManifestCondition,
     UmbConditionConfigBase,
     UmbConditionControllerArguments,
     UmbExtensionCondition,

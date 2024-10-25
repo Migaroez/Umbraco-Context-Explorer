@@ -1,9 +1,9 @@
-import { customElement, html } from '@umbraco-cms/backoffice/external/lit';
-import { UmbLitElement } from '@umbraco-cms/backoffice/lit-element';
-import { UMB_CONTEXT_EXPLORER_CONTEXT } from './context';
+import {customElement, html} from '@umbraco-cms/backoffice/external/lit';
+import {UmbLitElement} from '@umbraco-cms/backoffice/lit-element';
+import {UMB_CONTEXT_EXPLORER_CONTEXT} from './context';
 
 @customElement('umb-context-explorer-toggle')
-export class UmbContextExplorerToggle extends UmbLitElement{
+export class UmbContextExplorerToggle extends UmbLitElement {
 
     #contextExplorerContext?: typeof UMB_CONTEXT_EXPLORER_CONTEXT.TYPE;
 
@@ -14,15 +14,15 @@ export class UmbContextExplorerToggle extends UmbLitElement{
         });
     }
 
-    #toggle(){
+    #toggle() {
         this.#contextExplorerContext?.toggle();
     }
-    
-    override render(){
+
+    override render() {
         return html`
             <div @click="${this.#toggle}" style="color:red">TOGGLE</div>
         `;
     }
 }
 
-export { UmbContextExplorerToggle as element };
+export {UmbContextExplorerToggle as element};

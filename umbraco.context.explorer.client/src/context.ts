@@ -1,12 +1,18 @@
 import {UmbContextBase} from "@umbraco-cms/backoffice/class-api";
-import {UmbContextConsumerController, UmbContextDebugRequest, UmbContextToken,
-    UmbDebugContextData, UmbDebugContextItemData, contextData} from "@umbraco-cms/backoffice/context-api";
+import {
+    UmbContextConsumerController, UmbContextDebugRequest, UmbContextToken,
+    UmbDebugContextData, UmbDebugContextItemData, contextData
+} from "@umbraco-cms/backoffice/context-api";
 import {UmbControllerHost} from "@umbraco-cms/backoffice/controller-api";
 import {filter} from "@umbraco-cms/backoffice/external/rxjs";
 import {UmbObjectState} from "@umbraco-cms/backoffice/observable-api";
 import {UmbControllerHostElement} from "@umbraco-cms/backoffice/dist-cms/libs/controller-api";
-import { UMB_MODAL_MANAGER_CONTEXT, UMB_CONTEXT_DEBUGGER_MODAL, UmbModalManagerContext } from "@umbraco-cms/backoffice/modal";
-import { html, map } from "@umbraco-cms/backoffice/external/lit";
+import {
+    UMB_MODAL_MANAGER_CONTEXT,
+    UMB_CONTEXT_DEBUGGER_MODAL,
+    UmbModalManagerContext
+} from "@umbraco-cms/backoffice/modal";
+import {html, map} from "@umbraco-cms/backoffice/external/lit";
 
 export const UMB_CONTEXT_EXPLORER_CONTEXT = new UmbContextToken<UmbContextExplorerContext>('UmbContextExplorerContext');
 
@@ -20,11 +26,11 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
         this.#state?.setValue({hide: true})
     }
 
-    public toggle(){
+    public toggle() {
         this.#state?.setValue({hide: !this.#state?.value?.hide})
     }
-    
-    getHostContexts(host: UmbControllerHostElement, callback: {(data:UmbDebugContextData[]):void}){
+
+    getHostContexts(host: UmbControllerHostElement, callback: { (data: UmbDebugContextData[]): void }) {
         host.dispatchEvent(
             new UmbContextDebugRequest((contexts: Map<any, any>) => {
                 // The Contexts are collected
@@ -39,13 +45,13 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
             }),
         );
     }
-    
-    public displayHostContexts(host: UmbControllerHostElement){
-        this.getHostContexts(host,(contexts) =>{
+
+    public displayHostContexts(host: UmbControllerHostElement) {
+        this.getHostContexts(host, (contexts) => {
             new UmbContextConsumerController(host, UMB_MODAL_MANAGER_CONTEXT, (instance: UmbModalManagerContext) => {
                 console.log(host)
                 instance?.open(host, UMB_CONTEXT_DEBUGGER_MODAL, {
-                    data:{
+                    data: {
                         content: this.#renderContextAliases(contexts)
                     }
                 })
@@ -53,17 +59,18 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
         });
     }
 
-    #renderContextAliases(contexts : UmbDebugContextData[]) {
-        return html`<div class="events">
-			${map(contexts, (context) => {
-            return html`
-					<details>
-						<summary><strong>${context.alias}</strong></summary>
-						${this.#renderInstance(context.data)}
-					</details>
-				`;
-        })}
-		</div>`;
+    #renderContextAliases(contexts: UmbDebugContextData[]) {
+        return html`
+            <div class="events">
+                ${map(contexts, (context) => {
+                    return html`
+                        <details>
+                            <summary><strong>${context.alias}</strong></summary>
+                            ${this.#renderInstance(context.data)}
+                        </details>
+                    `;
+                })}
+            </div>`;
     }
 
     #renderInstance(instance: UmbDebugContextItemData) {
@@ -74,31 +81,34 @@ export class UmbContextExplorerContext extends UmbContextBase<UmbContextExplorer
 
             case 'object': {
                 return html`
-					<details>
-						<summary>Methods</summary>
-						<ul>
-							${map(instance.methods, (methodName) => html`<li>${methodName}</li>`)}
-						</ul>
-					</details>
+                    <details>
+                        <summary>Methods</summary>
+                        <ul>
+                            ${map(instance.methods, (methodName) => html`
+                                <li>${methodName}</li>`)}
+                        </ul>
+                    </details>
 
-					<details>
-						<summary>Properties</summary>
-						<ul>
-							${map(instance.properties, (property) => {
-                    switch (property.type) {
-                        case 'string':
-                        case 'number':
-                        case 'boolean':
-                        case 'object':
-                            return html`<li>${property.key} <em>(${property.type})</em> = ${property.value}</li>`;
+                    <details>
+                        <summary>Properties</summary>
+                        <ul>
+                            ${map(instance.properties, (property) => {
+                                switch (property.type) {
+                                    case 'string':
+                                    case 'number':
+                                    case 'boolean':
+                                    case 'object':
+                                        return html`
+                                            <li>${property.key} <em>(${property.type})</em> = ${property.value}</li>`;
 
-                        default:
-                            return html`<li>${property.key} <em>(${property.type})</em></li>`;
-                    }
-                })}
-						</ul>
-					</details>
-				`;
+                                    default:
+                                        return html`
+                                            <li>${property.key} <em>(${property.type})</em></li>`;
+                                }
+                            })}
+                        </ul>
+                    </details>
+                `;
             }
 
             case 'primitive': {

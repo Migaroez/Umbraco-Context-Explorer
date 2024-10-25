@@ -1,5 +1,5 @@
 import { UMB_DOCUMENT_ROOT_ENTITY_TYPE as t, UMB_DOCUMENT_ENTITY_TYPE as o } from "@umbraco-cms/backoffice/document";
-const a = (n, e) => {
+const i = (n, e) => {
   e.registerMany([
     {
       type: "globalContext",
@@ -126,10 +126,26 @@ const a = (n, e) => {
       name: "Context explorer condition",
       alias: "Our.ContextExplorer.DebugCondition",
       api: () => import("./DebugCondition-PEsmDDtj.js")
+    },
+    {
+      type: "userProfileApp",
+      alias: "Our.ContextExplorer.ContentDebugAction.UserProfileApp",
+      name: "User Profile App",
+      element: () => import("./userProfileApp-Cwep-Dyc.js"),
+      weight: 100,
+      meta: {
+        label: "Context explorer",
+        pathname: "context explorer"
+      },
+      conditions: [
+        {
+          alias: "Our.ContextExplorer.DebugCondition"
+        }
+      ]
     }
   ]);
 };
 export {
-  a as onInit
+  i as onInit
 };
 //# sourceMappingURL=umbraco.context.explorer.js.map
