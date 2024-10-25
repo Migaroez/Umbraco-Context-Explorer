@@ -8,7 +8,7 @@ export class UmbContextExplorerDashboard extends UmbLitElement {
         return html`
             <h3>Dashboard</h3>
             <div>
-                <umb-context-explorer/>
+            <umb-context-explorer></umb-context-explorer>
             </div>
         `;
     }

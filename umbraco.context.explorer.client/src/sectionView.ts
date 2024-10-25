@@ -8,7 +8,7 @@ export class UmbContextExplorerSectionView extends UmbLitElement {
         return html`
             <h3>Section view</h3>
             <div>
-                <umb-context-explorer/>
+                <umb-context-explorer></umb-context-explorer>
             </div>
         `;
     }

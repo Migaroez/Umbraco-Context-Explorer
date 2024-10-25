@@ -8,7 +8,7 @@ export class UmbContextExplorerSidebarApp extends UmbLitElement {
         return html`
             <h3>Sidebar app</h3>
             <div>
-                <umb-context-explorer/>
+                <umb-context-explorer></umb-context-explorer>
             </div>
         `;
     }
