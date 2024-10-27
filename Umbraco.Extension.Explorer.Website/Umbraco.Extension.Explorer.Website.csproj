@@ -3,6 +3,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RootNamespace>Umbraco.Context.Explorer.Website</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Umbraco.Context.Explorer\Umbraco.Context.Explorer.csproj" />
+    <ProjectReference Include="..\Umbraco.Extension.Explorer\Umbraco.Extension.Explorer.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

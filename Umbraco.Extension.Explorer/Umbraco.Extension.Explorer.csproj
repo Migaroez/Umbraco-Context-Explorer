@@ -4,10 +4,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <StaticWebAssetBasePath>App_Plugins/Umbraco.Context.Explorer</StaticWebAssetBasePath>
+    <RootNamespace>Umbraco.Context.Explorer</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Umbraco.Context.Explorer</PackageId>
+    <PackageId>Umbraco.Extension.Explorer</PackageId>
     <Product>Umbraco.Context.Explorer</Product>
     <Title>Umbraco.Context.Explorer</Title>
     <Description>...</Description>
